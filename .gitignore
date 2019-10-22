@@ -1,3 +1,8 @@
 venv/
 models/
 csv_data/
+.vscode/
+*.pdf
+
+.DS_Store
+.ipynb_checkpoints/
