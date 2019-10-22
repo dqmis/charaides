@@ -1,8 +1,12 @@
 venv/
-models/
+models/*
+data/*
 csv_data/
 .vscode/
 *.pdf
+
+!data/get_data.sh
+!models/get_model.sh
 
 .DS_Store
 .ipynb_checkpoints/
