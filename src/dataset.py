@@ -50,7 +50,7 @@ class DoodleDataset(Dataset):
     def export_labels(self):
         file = open('class_names.txt', 'w')
         for name in [name.replace(' ', '_') for name in self.source_df.word.unique()]:
-          file.write(name)
+            file.write('{}\n'.format(name))
         file.close()
 
     def __len__(self):
