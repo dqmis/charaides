@@ -13,7 +13,7 @@ def transform_image(image):
         (Tensor): Transformed image and converted to PyTorch Tensor.
     """
     img_transforms = torchvision.transforms.Compose([
-        torchvision.transforms.Resize(size=(290, 215)),
+        torchvision.transforms.Resize(size=(224, 224)),
         torchvision.transforms.ToTensor(),
         torchvision.transforms.Normalize(
             mean=[0.485, 0.456, 0.406],
@@ -67,7 +67,7 @@ def main():
     # label's config
     font_scale = 1.5
     font = cv2.FONT_HERSHEY_PLAIN
-    text_background = (0, 0, 0)
+    text_background = (0, 0, 255)
     text_offset_x = 10
     text_offset_y = cam_size - 25
 
@@ -77,6 +77,7 @@ def main():
 
     # loading the model
     model = get_model('./models/doodle_model.pt', class_names)
+    model.eval()
 
     # starting cv2 video capture
     cap = cv2.VideoCapture(0)
@@ -108,7 +109,6 @@ def main():
 
         # classifying the doodle
         pred = get_prediction(model, im, class_names)
-        print(pred[0])
 
         # generating output text
         text = '{} {}%'.format(pred[0]['label'], int(pred[0]['confidence'] * 100))
