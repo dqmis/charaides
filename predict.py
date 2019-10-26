@@ -120,7 +120,7 @@ def main():
         # drawing text box, text and showing the lines for better camera adjustment
         cv2.rectangle(img, box_coords[0], box_coords[1], text_background, cv2.FILLED)
         cv2.putText(img, text, (text_offset_x, text_offset_y), font, fontScale=font_scale, color=(255, 255, 255), thickness=1)
-        cv2.imshow('AIlias', img)
+        cv2.imshow('CharAIdes', img)
 
         key = cv2.waitKey(1)
         if key == 27:
