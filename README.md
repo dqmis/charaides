@@ -1,6 +1,6 @@
 # CharAIdes
 Doodle Recogniser and Classifier
-This is a project designed to recognise and classify doodles from camera input. You can read more about it [here]().
+This is a project designed to recognise and classify doodles from camera input. You can read more about it [here](https://dqmis.github.io/blog/2019/10/18/CharAIdes).
 
 To start this classifier you need to:
 Create new python enviroment. Python's version must be 3.53
